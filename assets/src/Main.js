@@ -36,6 +36,16 @@ cc.Class({
     start () {
         console.log("Main=====start");
         var qp = this.getComponent('qp');
+       
+        starx.init({host: '127.0.0.1', port: 3250, path: '/three_game'}, function () {
+            console.log("initialized");
+            
+            // starx.on("onNewUser", onNewUser);
+            // starx.on("onRoomInfo", onRoomInfo);
+            // starx.on("notice", onNotice);
+            
+           starx.request("roomHandlers.Move", {"type": 1, "player": 123, "src":{"X":1,"Y":2},"dst":{"X":1,"Y":2}});
+        })  
     },
 
     // update (dt) {},

@@ -84,11 +84,14 @@ cc.Class({
             Object.keys(this.points[x]).forEach(y => {
                 let node = new cc.Node('Sprite');
                 let sp = node.addComponent(cc.Sprite);
-                sp.spriteFrame = this.c2;
+                sp.spriteFrame = this.c1;
                 node.parent = self.node;
                 
-                console.log(this.points[x][y].x, '==', this.points[x][y].y);
                 node.setPosition(this.points[x][y].x - 540, this.points[x][y].y - 960);
+                node.on('mousedown', function (event) {
+                    
+                    node.getComponent(cc.Sprite).spriteFrame=self.c2;
+                  }, this);
             })
         });
         
