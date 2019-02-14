@@ -1,4 +1,5 @@
 (function (exports, ByteArray, global) {
+  
   var Protocol = exports;
 
   var PKG_HEAD_BYTES = 4;
@@ -346,4 +347,4 @@
   if(typeof(window) != "undefined") {
     window.Protocol = Protocol;
   }
-})(typeof(window)=="undefined" ? module.exports : (this.Protocol = {}),typeof(window)=="undefined"  ? Buffer : Uint8Array, this);
+})(typeof(window)=="undefined" ? module.exports : (window.Protocol = {}),typeof(window)=="undefined"  ? Buffer : Uint8Array, window);
